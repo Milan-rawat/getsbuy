@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Header.module.css";
+import { Backdrop, SideDrawer } from "./SideDrawer";
 
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
@@ -9,13 +10,30 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import SearchIcon from "@material-ui/icons/Search";
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleDrawerMenu = () => {
+    setMenuOpen((prevState) => {
+      return !prevState;
+    });
+  };
+
+  const closeDrawerMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className={classes.header}>
       <div className={classes.topBar} />
       <section className={classes.topNavBar}>
         <div className={classes.leftTopNav}>
+          {menuOpen && <Backdrop onCloseMenu={closeDrawerMenu} />}
+          <SideDrawer openMenu={menuOpen} />
           <IconButton>
-            <MenuIcon className={classes.topNavButton} />
+            <MenuIcon
+              className={classes.topNavButton}
+              onClick={toggleDrawerMenu}
+            />
           </IconButton>
           <div className={classes.applicationTitle}>Getsbuy</div>
         </div>
