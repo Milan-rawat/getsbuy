@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import classes from "./Header.module.css";
-import { Backdrop, SideDrawer } from "./SideDrawer";
+
+import { Backdrop, SideDrawer } from "../Drawer/SideDrawer";
 
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-// import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 
 const Header = () => {
