@@ -2,7 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./SideDrawer.css";
 
-import RippleEffect from "../UX/RippleEffect";
+import RippleEffect from "../../UX/RippleEffect";
+
+import { Link } from "react-router-dom";
 
 export const Backdrop = (props) => {
   return (
@@ -42,7 +44,13 @@ export const SideDrawer = (props) => {
           <div className="navActions">
             <ul>
               <RippleEffect>
-                <li>Home</li>
+                <Link
+                  to={{
+                    pathname: "/home",
+                  }}
+                >
+                  <li>Home</li>
+                </Link>
               </RippleEffect>
               <RippleEffect>
                 <li>Account</li>

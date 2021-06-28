@@ -72,6 +72,10 @@
   overflow-y: scroll;
 }
 
+.navActions a {
+  text-decoration: none;
+}
+
 .navActions li {
   display: flex;
   align-items: center;
@@ -103,5 +107,4 @@
 }
 .navActions .logoutBtn:hover {
   background-color: #dcdcdc;
-  /* color: white; */
 }
