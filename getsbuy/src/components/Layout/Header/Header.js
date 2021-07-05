@@ -23,7 +23,6 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <div className={classes.topBar} />
       <section className={classes.topNavBar}>
         <div className={classes.leftTopNav}>
           {menuOpen && <Backdrop onCloseMenu={closeDrawerMenu} />}

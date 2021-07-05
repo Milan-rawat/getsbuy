@@ -5,22 +5,21 @@ button:focus {
 }
 
 .header {
-  position: fixed;
   width: 100%;
-}
-
-.topBar {
-  width: 100%;
-  height: 10px;
-  background-color: #482880;
+  z-index: 10;
+  position: sticky;
+  top: -50px;
 }
 
 /* TOP NAVIGATION BAR */
 .topNavBar {
   display: flex;
   align-items: center;
+  border-top: 10px solid #482880;
   background-color: #673ab7;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
 }
 
 .leftTopNav {
@@ -44,6 +43,7 @@ button:focus {
   background-color: #8561c5;
   display: flex;
   justify-content: center;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .searchInputBox {
