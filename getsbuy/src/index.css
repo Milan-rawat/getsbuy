@@ -4,10 +4,10 @@
   box-sizing: border-box;
 }
 
-/* input:focus,
+input:focus,
 button:focus {
   outline: none;
-} */
+}
 
 .globalCentered {
   display: flex;
