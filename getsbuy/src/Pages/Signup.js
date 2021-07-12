@@ -14,7 +14,7 @@ const Signup = () => {
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <h1>Signup</h1>
+          <p className={classes.pageHeading}>Signup</p>
         </div>
         <form className={classes.form}>
           <div className={classes["signup-form"]}>

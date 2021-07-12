@@ -11,13 +11,9 @@
 }
 
 .signup-form-container {
-  width: 90%;
+  width: 100%;
   max-width: 450px;
   height: 550px;
-}
-
-.signupPage .avatar {
-  background-color: #673ab7;
 }
 
 .formHeader {
@@ -27,6 +23,16 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  margin-bottom: 20px;
+}
+
+.formHeader .avatar {
+  background-color: #673ab7;
+}
+
+.formHeader p.pageHeading {
+  font-size: 26px;
+  color: black;
 }
 
 .fn-input {
