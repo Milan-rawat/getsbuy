@@ -1,139 +1,85 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+import classes from "./Signup.module.css";
+
 import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
 
-function Copyright() {
+const Signup = () => {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        getsbuy.com
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-}));
-
-export default function SignUp() {
-  const classes = useStyles();
-
-  return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign up
-        </Typography>
-        <form className={classes.form} noValidate>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete="fname"
-                name="firstName"
-                variant="outlined"
-                required
-                fullWidth
-                id="firstName"
-                label="First Name"
-                autoFocus
+    <div className={classes.signupPage}>
+      <div className={classes["signup-form-container"]}>
+        <div className={classes.formHeader}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <h1>Signup</h1>
+        </div>
+        <form className={classes.form}>
+          <div className={classes["signup-form"]}>
+            <div className={`${classes["form-group"]} ${classes["fn-input"]}`}>
+              <input
+                className={classes["form-control"]}
+                type="text"
+                id="firstNameInput"
+                placeholder=" "
               />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="lname"
+              <label className={classes["form-label"]} htmlFor="firstNameInput">
+                First Name *
+              </label>
+            </div>
+            <div className={`${classes["form-group"]} ${classes["ln-input"]}`}>
+              <input
+                className={classes["form-control"]}
+                type="text"
+                id="lastNameInput"
+                placeholder=" "
               />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
+              <label className={classes["form-label"]} htmlFor="lastNameInput">
+                Last Name *
+              </label>
+            </div>
+            <div className={`${classes["form-group"]} ${classes["em-input"]}`}>
+              <input
+                className={classes["form-control"]}
+                type="text"
+                id="emailInput"
+                placeholder=" "
               />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
+              <label className={classes["form-label"]} htmlFor="emailInput">
+                Email Address *
+              </label>
+            </div>
+            <div className={`${classes["form-group"]} ${classes["pw-input"]}`}>
+              <input
+                className={classes["form-control"]}
+                type="text"
+                id="passwordInput"
+                placeholder=" "
               />
-            </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
-              />
-            </Grid>
-          </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            style={{ backgroundColor: "#673ab7" }}
-          >
-            Sign Up
-          </Button>
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Link href="#">Already have an account? Sign in</Link>
-            </Grid>
-          </Grid>
+              <label className={classes["form-label"]} htmlFor="passwordInput">
+                Password *
+              </label>
+            </div>
+          </div>
+          <div className={classes["form-actions-container"]}>
+            <div className={classes["form-action-container"]}>
+              <button className={classes["form-action"]} type="submit">
+                SIGN UP
+              </button>
+            </div>
+            <div className={classes["form-action-container"]}>
+              <p className={classes["form-action"]} href="/signup">
+                <Link to="/signin">Already have an account? Signin</Link>
+              </p>
+            </div>
+          </div>
         </form>
       </div>
-      <Box mt={5}>
-        <Copyright />
-      </Box>
-    </Container>
+      <p>Copyright &copy; Getsbuy.com {new Date().getFullYear()}</p>
+    </div>
   );
-}
+};
+
+export default Signup;

@@ -7,6 +7,7 @@ import IconButton from "@material-ui/core/IconButton";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import SearchIcon from "@material-ui/icons/Search";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,9 +37,11 @@ const Header = () => {
           <div className={classes.applicationTitle}>Getsbuy</div>
         </div>
         <div className={classes.rightTopNav}>
-          <IconButton>
-            <AccountCircle className={classes.topNavButton} />
-          </IconButton>
+          <Link to="/signin">
+            <IconButton>
+              <AccountCircle className={classes.topNavButton} />
+            </IconButton>
+          </Link>
           <IconButton>
             <ShoppingCartIcon className={classes.topNavButton} />
           </IconButton>
