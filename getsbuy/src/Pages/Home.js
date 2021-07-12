@@ -2,10 +2,10 @@ import React from "react";
 
 import classes from "./Home.module.css";
 
-import Header from "../Layout/Header/Header";
-import Slider from "../Layout/Slider/Slider";
-import Categories from "../Layout/Categories/Categories";
-import Footer from "../Layout/Footer/Footer";
+import Header from "../components/Layout/Header/Header";
+import Slider from "../components/Layout/Slider/Slider";
+import Categories from "../components/Layout/Categories/Categories";
+import Footer from "../components/Layout/Footer/Footer";
 
 const Home = () => {
   return (
