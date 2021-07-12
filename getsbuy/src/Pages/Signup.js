@@ -14,7 +14,7 @@ const Signup = () => {
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <p className={classes.pageHeading}>Signup</p>
+          <p className={classes.pageHeading}>Sign up</p>
         </div>
         <form className={classes.form}>
           <div className={classes["signup-form"]}>
@@ -70,14 +70,16 @@ const Signup = () => {
               </button>
             </div>
             <div className={classes["form-action-container"]}>
-              <p className={classes["form-action"]} href="/signup">
+              <p className={classes["form-action"]}>
                 <Link to="/signin">Already have an account? Signin</Link>
               </p>
             </div>
           </div>
         </form>
       </div>
-      <p>Copyright &copy; Getsbuy.com {new Date().getFullYear()}</p>
+      <p className={classes["signup-page-footer"]}>
+        Copyright &copy; Getsbuy.com {new Date().getFullYear()}
+      </p>
     </div>
   );
 };
