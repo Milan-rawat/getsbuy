@@ -1,19 +1,17 @@
 .slider-items {
   width: 100%;
-  height: 20vw;
-  min-height: 170px;
+  height: auto;
   max-height: 260px;
 }
 
 .slider-item-container {
   width: 100%;
-  height: 100%;
+  height: fit-content;
 }
 
 .slider-item-container img {
   width: 100%;
-  height: 20vw;
-  min-height: 170px;
+  height: auto;
   max-height: 260px;
   text-align: center;
 }
