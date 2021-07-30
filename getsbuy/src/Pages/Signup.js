@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import classes from './Signup.module.css';
 
 import Avatar from '@material-ui/core/Avatar';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Swal from 'sweetalert2';
 
 const Signup = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const history = useHistory();
 
   const formSubmitHandler = async (e) => {
     e.preventDefault();
@@ -25,8 +28,21 @@ const Signup = () => {
       }),
     });
     const response = JSON.parse(await res.text());
+    const resStatus = response.status.toUpperCase();
+    const resMessage = response.message;
+    if (response.status === 'success') {
+      Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: `${resMessage}`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      history.push('/');
+    }
 
-    console.log(response.message);
+    if (response.status === 'fail')
+      Swal.fire(`${resStatus}`, `${resMessage}`, 'error');
   };
   return (
     <div className={classes.signupPage}>
