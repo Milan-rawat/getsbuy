@@ -15,3 +15,19 @@ exports.getAllUsers = async (req, res) => {
     });
   }
 };
+
+exports.getUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+
+    res.status(200).json({
+      status: 'success',
+      user: user,
+    });
+  } catch (err) {
+    res.status(503).json({
+      status: 'fail',
+      message: 'Something went wrong! Please try again later',
+    });
+  }
+};
