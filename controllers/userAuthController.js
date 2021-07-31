@@ -34,7 +34,7 @@ exports.userSignup = async (req, res) => {
 
 exports.userSignin = async (req, res) => {
   try {
-    const user = await User.find({ email: req.body.email });
+    const user = await User.findOne({ email: req.body.email });
 
     if (user.password === req.body.password) {
       res.status(200).json({
