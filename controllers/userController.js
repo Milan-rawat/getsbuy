@@ -1,33 +1,20 @@
 const User = require('../models/userModel');
+const catchAsync = require('../utils/catchAsync');
 
-exports.getAllUsers = async (req, res) => {
-  try {
-    const allUsers = await User.find();
+exports.getAllUsers = catchAsync(async (req, res, next) => {
+  const allUsers = await User.find();
 
-    res.status(200).json({
-      status: 'success',
-      users: allUsers,
-    });
-  } catch (err) {
-    res.status(503).json({
-      status: 'fail',
-      message: 'Something went wrong! Please try again later',
-    });
-  }
-};
+  res.status(200).json({
+    status: 'success',
+    users: allUsers,
+  });
+});
 
-exports.getUser = async (req, res) => {
-  try {
-    const user = await User.findById(req.params.id);
+exports.getUser = catchAsync(async (req, res, next) => {
+  const user = await User.findById(req.params.id);
 
-    res.status(200).json({
-      status: 'success',
-      user: user,
-    });
-  } catch (err) {
-    res.status(503).json({
-      status: 'fail',
-      message: 'Something went wrong! Please try again later',
-    });
-  }
-};
+  res.status(200).json({
+    status: 'success',
+    user: user,
+  });
+});
