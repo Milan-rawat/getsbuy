@@ -29,17 +29,24 @@ exports.userSignup = catchAsync(async (req, res, next) => {
 exports.userSignin = catchAsync(async (req, res, next) => {
   const user = await User.findOne({ email: req.body.email });
 
+  if (!user) {
+    res.status(403).json({
+      status: 'fail',
+      message: 'Email or Password is Incorrect!',
+    });
+  }
+
   if (user.password === req.body.password) {
     res.status(200).json({
       status: 'success',
       message: 'Signin successfully',
       user: user,
     });
-  } else {
+  }
+  if (user.password !== req.body.password) {
     res.status(403).json({
       status: 'fail',
       message: 'Email or Password is Incorrect!',
-      user: user,
     });
   }
 });
