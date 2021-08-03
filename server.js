@@ -4,7 +4,7 @@ const app = require('./app');
 
 const DB = 'mongodb://localhost:27017/getsbuy';
 
-mongoose
+const server = mongoose
   .connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -17,4 +17,12 @@ mongoose
 const port = 8000;
 app.listen(port, () => {
   console.log(`App running on port ${port}`);
+});
+
+process.on('unhandledRejection', (err) => {
+  console.log('UNHANDLER REJECTION!  Shutting down...');
+  console.log(err.name, err.message);
+  server.close(() => {
+    process.exit(1);
+  });
 });
