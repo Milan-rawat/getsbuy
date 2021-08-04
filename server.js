@@ -2,6 +2,12 @@ const mongoose = require('mongoose');
 
 const app = require('./app');
 
+process.on('uncaughtException', (err) => {
+  console.log('UNCAUGHT EXCEPTION!  Shutting down...');
+  console.log(err.name, err.message);
+  process.exit(1);
+});
+
 const DB = 'mongodb://localhost:27017/getsbuy';
 
 const server = mongoose
