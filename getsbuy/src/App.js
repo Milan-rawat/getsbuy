@@ -1,7 +1,7 @@
 import "./App.css";
-import Home from "./Pages/Home";
-import Signup from "./Pages/Signup";
-import Signin from "./Pages/Signin";
+import Home from "./Pages/Home/Home";
+import Signup from "./Pages/Auth/Signup";
+import Signin from "./Pages/Auth/Signin";
 
 import { Redirect, Route } from "react-router-dom";
 
